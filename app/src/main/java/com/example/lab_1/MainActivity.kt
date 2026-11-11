@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import com.example.lab_1.ui.navigation.TasksNavDisplay
 import com.example.lab_1.ui.screens.ProgressScreen
 import com.example.lab_1.ui.screens.TasksScreen
 import com.example.lab_1.ui.screens.ScheduleScreen
@@ -67,7 +68,7 @@ fun LAB_1App() {
                 AppDestinations.SCHEDULE -> ScheduleScreen(
                     modifier = Modifier.padding(innerPadding),
                 )
-                AppDestinations.TASKS -> TasksScreen(
+                AppDestinations.TASKS -> TasksNavDisplay(
                     modifier = Modifier.padding(innerPadding),
                 )
                 AppDestinations.PROGRESS -> ProgressScreen(
