@@ -32,7 +32,7 @@ fun TasksNavDisplay(modifier: Modifier, viewModel: TasksViewModel = viewModel())
             entry<TasksScreen.Details> {
                 TasksDetailsSubScreen(
                     onBackClick = { viewModel.navigateBack() },
-                    onNavigateToEdit = { viewModel.navigateTo(TasksScreen.Edit) } // Перехід №2
+                    onNavigateToEdit = { viewModel.navigateTo(TasksScreen.Edit) }
                 )
             }
 

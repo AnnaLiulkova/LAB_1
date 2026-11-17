@@ -1,13 +1,18 @@
 package com.example.lab_1.ui.viewmodels
 
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.lab_1.model.MyListable
 import com.example.lab_1.ui.navigation.TasksScreen
+import com.example.lab_1.repository.AppRepository
+import com.example.lab_1.repository.AppRepositoryImpl
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
-class TasksViewModel : ViewModel() {
+class TasksViewModel(appRepository: AppRepository = AppRepositoryImpl()) : ViewModel() {
     var taskStatus = mutableStateOf("Status: Pending")
         private set
 
@@ -37,4 +42,7 @@ class TasksViewModel : ViewModel() {
         }
         return false
     }
+
+    val appLiveList: LiveData<List<MyListable>>
+        field = MutableLiveData(appRepository.getList())
 }
